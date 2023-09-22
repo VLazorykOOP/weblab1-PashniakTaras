@@ -1,0 +1,81 @@
+/* Селектори - ідентифікатори */
+#about {
+    background-color: #f0f0f0;
+}
+
+/* Селектори - класів */
+ul {
+    list-style-type: none;
+}
+
+/* Селектори - сусідів */
+nav ul li {
+    margin-right: 10px;
+}
+
+/* Селектори - контекстний(спадкоємців) */
+article p {
+    font-weight: bold;
+}
+
+/* Селектори - атрибутів:[attr] */
+[title] {
+    border: 1px solid #ccc;
+}
+
+/* Селектори - атрибутів:[attr ~=value] */
+[title~="info"] {
+    background-color: #ffcc00;
+}
+
+/* Селектори - атрибутів:[attr*=value] */
+[title*="taras"] {
+    color: red;
+}
+
+/* Псевдокласи::first-child */
+nav ul li:first-child {
+    font-weight: bold;
+}
+
+/* Псевдокласи::last-child */
+nav ul li:last-child {
+    font-style: italic;
+}
+
+/* Псевдокласи::enabled */
+input:enabled {
+    background-color: #fff;
+}
+
+/* Псевдокласи::invalid */
+input:invalid {
+    border: 2px solid red;
+}
+
+/* Псевдокласи::visited */
+a:visited {
+    color: purple;
+}
+
+/* Псевдокласи::last-of-type */
+li:last-of-type {
+    background-color: #eee;
+}
+
+/* Псевдокласи::empty */
+aside:empty {
+    display: none;
+}
+
+/* Псевдоелементи ::first-line */
+article::first-line {
+    font-size: 24px;
+}
+
+/* Псевдоелементи ::selection */
+::selection {
+    background-color: #0077ff;
+    color: #fff;
+}
+

@@ -2,23 +2,44 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/mycss.css">
     <meta name="Author" content="Пашняк Тарас Олександрович">
     <title>Про автора</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="company-info.html">Інформація про фірму</a></li>
-            <li><a href="news.html">Новини фірми</a></li>
-        </ul>
-    </nav>
-    <h3 style="color: blue;" dir="ltr" align="center">Про мене</h3>
-    <p id="about" title="Детальна інформація" lang="uk">Я Тарас, люблю писати код і грати в ігри.</p>
-    <br id="line-break" title="Роздільник">
-    <hr size="2" color="green" width="50%">
-    <small class="important" lang="uk" dir="ltr">А ще я люблю ходити в тренажерний зал.</small>
-    <strike id="removed" title="Застарілий текст" lang="uk">Граю в теніс.</strike>
-    <big id="important-heading" title="Заголовок" lang="uk">Це моя лабораторна робота.</big>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="company-info.html">Інформація про фірму</a></li>
+                <li><a href="news.html">Новини фірми</a></li>
+            </ul>
+        </nav>
+        <h1>Про автора</h1>
+    </header>
+    <main>
+        <section id="about">
+            <article>
+                <h2>Детальна інформація</h2>
+                <p>Я Тарас, люблю писати код і грати в ігри.</p>
+            </article>
+        </section>
+        <section id="hobbies">
+            <h2>Мої захоплення</h2>
+            <ul>
+                <li>Програмування</li>
+                <li>Гра в ігри</li>
+                <li>Фітнес</li>
+            </ul>
+        </section>
+    </main>
+    <aside>
+        <h3>Додаткова інформація</h3>
+        <p>Це моя лабораторна робота.</p>
+        <p>Застарілий текст: <strike>Граю в теніс.</strike></p>
+    </aside>
+    <footer>
+        <p>© 2023 Пашняк Тарас Олександрович</p>
+    </footer>
 </body>
 </html>
