@@ -106,6 +106,7 @@ ul {
 aside {
     position: fixed;
     top: 50px;
+    margin: 110px 40px 50px 50px;
     right: 20px;
     z-index: 999;
 }
