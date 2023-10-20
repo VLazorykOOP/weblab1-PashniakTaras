@@ -8,38 +8,62 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="company-info.html">Інформація про фірму</a></li>
-                <li><a href="news.html">Новини</a></li>
-                <li><a href="zvit.html">Звіт</a></li>
+        <nav class="menu" id="menu-list">
+            <ul id="ulid" value="square" style="list-style-type: square;" start="1">
+                <li class="menu-item" value="1" id="menu-item-1">
+                    <a href="index.html" id="menu-link-1" rel="nofollow" title="Посилання на головну" shape="rect" style="color: blue; text-decoration: underline;">Головна</a>
+                </li>
+                <li class="menu-item" value="2" id="menu-item-2">
+                    <a href="company-info.html" id="menu-link-2" rel="nofollow" title="Посилання на інформацію про фірму" shape="rect" style="color: blue; text-decoration: underline;">Інформація про фірму</a>
+                </li>
+                <li class="menu-item" value="3" id="menu-item-3">
+                    <a href="news.html" id="menu-link-3" rel="nofollow" title="Посилання на новини" shape="rect" style="color: blue; text-decoration: underline;">Новини</a>
+                </li>
+                <li class="menu-item" value="4" id="menu-item-4">
+                    <a href="zvit.html" id="menu-link-4" rel="nofollow" title="Посилання на звіт" shape="rect" style="color: blue; text-decoration: underline;">Звіт</a>
+                </li>
+                <li class="menu-item" value="5" id="menu-item-5">
+                    <a href="menu.html" id="menu-link-5" rel="nofollow" title="Посилання на меню" shape="rect" style="color: blue; text-decoration: underline;">Меню</a>
+                </li>
             </ul>
         </nav>
         <h1>Про автора</h1>
     </header>
     <main>
-        <section id="about">
-            <article>
-                <h2>Детальна інформація</h2>
-                <p>Я Тарас, люблю писати код і грати в ігри.</p>
-            </article>
+        <article>
+            <h2>Детальна інформація</h2>
+            <dl>
+                <dt id="description-term" style="color: green;" title="Основна інформація про автора">Основна інформація</dt>
+                <link rel="stylesheet" sizes="16x16" class="icon" type="image/png" charset="UTF-8" href="immgg.png" rel="icon">
+                <dd id="description-details" style="font-weight: bold;">Я Тарас, люблю писати код і грати в ігри.</dd>
+            </dl>
+        </article>
         </section>
         <section id="hobbies">
             <h2>Мої захоплення</h2>
-            <ul>
-                <li>Програмування</li>
-                <li>Гра в ігри</li>
-                <li>Фітнес</li>
+            <ul id="hobbies-list" style="list-style-type: square;">
+                <li class="hobby-item" value="square">Програмування</li>
+                <li class="hobby-item" value="square">Гра в ігри</li>
+                <li class="hobby-item" value="square">Фітнес</li>
             </ul>
         </section>
+        <section id="interests">
+            <h2>Мої інтереси</h2>
+            <ol id="interests-list" class="numbered-list" title="Мої інтереси" type="1">
+                <li>Веб-розробка</li>
+                <li>Ігри настільні</li>
+                <li>Музика</li>
+            </ol>
+        </section>
     </main>
+    <marquee direction="left" behavior="scroll" truespeed="truespeed" class="scrolling-text" loop="infinite">Це рухомий текст</marquee>
     <aside>
         <h3>Додаткова інформація</h3>
         <p>Це моя лабораторна робота.</p>
-        <p>Застарілий текст: <strike>Граю в теніс.</strike></p>
+        <p>Застарілий текст: <nobr>Граю в теніс.</nobr></p>
     </aside>
     <footer>
+        <dir style="font-weight: bold;" dir="ltr">Це текст у тегу &lt;dir&gt; з атрибутами dir і style.</dir>
         <p>© 2023 Пашняк Тарас Олександрович</p>
     </footer>
 </body>
