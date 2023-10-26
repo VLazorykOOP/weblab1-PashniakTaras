@@ -119,3 +119,16 @@ h2 {
     line-height: 150%;
     vertical-align: middle;
 }
+
+td,
+th {
+    border: 1px solid #150101;
+    padding: 3px;
+    text-align: center;
+    width: 50px;
+}
+
+table col {
+    width: 30px;
+   
+}
