@@ -54,5 +54,28 @@
             <img src="info.jpeg" alt="Логотип фірми" width="200" height="150">
         </div>
     </div>
+    <h4 id="company-info" title="Інформація про фірму" align="center">Для прийому на роботу в компанію, заповніть форму нижче:</h4>
+    <form method="post" dir="ltr" accept-charset="UTF-8" enctype="multipart/form-data" id="myForm">
+        <label title="Gender">Ваше ім'я:</label>
+        <input type="text" size="20" max="100" formtarget="_blank" form="myForm" minlength="5" height="30" lang="en" formaction="submit.php" name="username" value="" max="50">
+        <br />
+        <label title="Gender">Ваша стать:</label>
+        <label title="Gender">Male</label>
+        <input type="radio" name="gender">
+        <label title="Gender">Female</label>
+        <br />
+        <label title="Gender">Ваше резюме:</label>
+        <input type="file">
+        <button value="Submit" formmethod="post" autofocus="autofocus" formnovalidate="formnovalidate">Submit</button>
+        <legend lang="en" title="Form Title" dir="ltr">Form Legend</legend>
+        <label title="Label Title" style="color:red;" for="myInput" form="myForm">Username: *виведені дані*</label>
+        <keygen disabled="disabled" class="myKeygen" keytype="rsa" title="Key Generator" style="width:200px;">
+        <details dir="ltr" lang="en" id="myDetails">
+            <summary>More Details</summary>
+            Зарплата в нашій компанії: 1грн за годину роботи.
+        </details>
+        <output class="outputClass" id="outputId" style="color: blue;" for="myInput">*Output Text*</output>
+        <datalist id="myDatalist" title="My Datalist" lang="en"></datalist>
+    </form>
 </body>
 </html>

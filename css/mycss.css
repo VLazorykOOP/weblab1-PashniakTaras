@@ -1,4 +1,14 @@
 
+.blablabla {
+    float: left;
+    /* Вирівнювання до лівого краю */
+    width: 230px;
+    height: 180px;
+    background-color: lightslategrey;
+    margin-right: 10px;
+    border: 3px;
+    /* Додатковий зазор справа для інших елементів */
+}
 
 /* Селектори - ідентифікатори */
 #about {
