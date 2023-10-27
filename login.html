@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <form method="post" action="index.html" dir="ltr" accept-charset="UTF-8" enctype="multipart/form-data" id="login-form">
+        <fieldset>
+            <legend lang="en" title="Form Legend" dir="ltr">Login to the Site</legend>
+            <label title="Your username" style="font-weight: bold;">Username:</label>
+            <input type="text" size="30" max="50" minlength="4" height="30" lang="en" name="username" value="" form="login-form" formaction="/login" formtarget="_blank">
+            <br>
+            <label title="Your password" style="font-weight: bold;">Password:</label>
+            <input type="password" size="30" name="password" form="login-form" formaction="/login" formtarget="_self">
+            <br>
+            <label title="Date of Birth" style="font-weight: bold;">Birth date:</label>
+            <input type="datetime-local">
+            <br>
+            <input type="checkbox" id="remember-me" name="remember" checked>
+            <label for="remember-me">Remember me</label>
+            <br>
+
+            <button type="submit" value="Login" formmethod="post" autofocus formnovalidate style="background-color: #4CAF50; color: white;">Login</button>
+        </fieldset>
+    </form>
+    <datalist id="usernames" title="Usernames List" lang="en">
+        <option value="user1">
+        <option value="user2">
+        <option value="user3">
+    </datalist>
+</body>
+</html>
