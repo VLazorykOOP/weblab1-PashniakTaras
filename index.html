@@ -27,9 +27,120 @@
             letter-spacing: 3px; 
 
         }
+        .highlighted {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body>
+<body onload="onPageLoad()" onunload="onPageUnload()">
+    <script src="main.js"></script>
+    
+    <br />
+    <input type="text" id="inputField" onblur="onInputBlur()">
+    <button id="sendMessageButton" onclick="sendMessage()">Надіслати повідомлення</button>
+    <br />
+    <button id="unloadButton">Натисніть для виходу</button>
+    <p id="message"></p>
+
+
+    <h1 onmouseover="highlight(this)" onmouseout="unhighlight(this)" onclick="showMessage(this)">Це заголовок H1</h1>
+    <h2 onmouseover="highlight(this)" onmouseout="unhighlight(this)" ondblclick="showMessage(this)">Це заголовок H2</h2>
+    <p onmousedown="changeColor(this)" onmouseup="resetColor(this)" onmousewheel="changeFontSize(this)">Це абзац</p>
+
+
+    <form>
+        <textarea id="output" rows="5" cols="40"></textarea>
+        <br>
+        <button id="runButton" onclick="displayDeveloperInfo()">Run Task</button>
+    </form>
+    <script>
+        // Функція, яка виконується при завантаженні сторінки
+        function onPageLoad() {
+            alert("Сторінка повністю завантажена!");
+        }
+
+        // Функція, яка виконується при виході користувача зі сторінки
+        function onPageUnload() {
+            alert("Користувач виходить зі сторінки.");
+        }
+
+        // Додамо обробник для кнопки
+        document.getElementById("unloadButton").onclick = function () {
+            onPageUnload();
+        };
+
+        // Обробник події onblur
+        function onInputBlur() {
+            var inputField = document.getElementById("inputField");
+            alert("Поле втратило фокус. Зміст поля: " + inputField.value);
+        }
+
+        // Обробник події onmessage
+        function sendMessage() {
+            var message = "Привіт, це повідомлення!";
+            window.postMessage(message, "*");
+        }
+
+        window.addEventListener("message", function (event) {
+            var messageElement = document.getElementById("message");
+            messageElement.textContent = "Повідомлення отримано: " + event.data;
+        });
+
+        // Обробник події onpagehide
+        window.onpagehide = function (event) {
+            alert("Сторінка приховується або закривається.");
+        };
+
+        // Обробник події onresize
+        window.onresize = function () {
+            var newSize = "Розмір вікна змінився на " + window.innerWidth + "x" + window.innerHeight;
+            alert(newSize);
+        };
+
+        //2
+
+        function highlight(element) {
+            element.classList.add("highlighted");
+        }
+
+        function unhighlight(element) {
+            element.classList.remove("highlighted");
+        }
+
+        function showMessage(element) {
+            alert("Ви виконали клік на " + element.tagName);
+        }
+
+        function changeColor(element) {
+            element.style.color = "blue";
+        }
+
+        function resetColor(element) {
+            element.style.color = "black";
+        }
+
+        function changeFontSize(element) {
+            const fontSize = parseInt(element.style.fontSize || 16);
+            element.style.fontSize = (fontSize + 2) + "px";
+        }
+
+        //3
+        function displayDeveloperInfo() {
+            const developerInfo = "Ім'я розробника Web-проекту: Тарас";
+
+            // Виведення інформації у текстове поле форми
+            const outputTextArea = document.getElementById("output");
+            outputTextArea.value = developerInfo;
+
+            // Виведення інформації у спливаюче повідомлення (alert)
+            alert(developerInfo);
+
+            // Виведення інформації в консоль (console.log)
+            console.log(developerInfo);
+        }
+    </script>
+
     <header>
         <nav class="menu" id="menu-list">
             <ul id="ulid" value="square" style="list-style-type: square;" start="1">

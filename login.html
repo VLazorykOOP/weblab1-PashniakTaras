@@ -35,5 +35,23 @@
         <option value="user2">
         <option value="user3">
     </datalist>
+
+    <h1>Пошук кількості слів</h1>
+    <form>
+        <label for="textInput">Введіть текст:</label>
+        <textarea id="textInput" rows="4" cols="50"></textarea>
+        <br>
+        <button type="button" onclick="countWords()">Пошук інформації</button>
+    </form>
+    <p>Кількість слів: <span id="wordCount">0</span></p>
+
+    <script>
+        function countWords() {
+            const textInput = document.getElementById("textInput").value;
+            const words = textInput.match(/\b\w+\b/g);
+            const wordCount = words ? words.length : 0;
+            document.getElementById("wordCount").textContent = wordCount;
+        }
+    </script>
 </body>
 </html>

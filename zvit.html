@@ -11,10 +11,41 @@
             border: 8
             +px solid lightgrey; /* Рамка 2px шириною, червоного кольору */
         }
+        .image-container {
+            display: flex;
+        }
+
+        .image {
+            border: 8px solid lightgrey; /* Рамка 2px шириною, червоного кольору */
+            margin: 10px;
+            margin-left: 25px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+            .image:hover {
+                transform: scale(1.1);
+                filter: brightness(1.2);
+            }
     </style>
 </head>
 
 <body>
+    <script>
+        const images = document.querySelectorAll(".image");
+
+        images.forEach(image => {
+            image.addEventListener("mouseover", () => {
+                image.style.transform = "scale(1.1)";
+                image.style.filter = "brightness(1.2)";
+            });
+
+            image.addEventListener("mouseout", () => {
+                image.style.transform = "scale(1)";
+                image.style.filter = "brightness(1)";
+            });
+        });
+    </script>
+
     <h1 align='center'>Звіт </h1>
     <h2 align='center'>Про виконання лабораторної роботи №6</h2>
     <h2 align='center'>
@@ -36,15 +67,68 @@
     </nav>
     <br />
     <h4 align="left">Завдання:</h4>
-    <img src="task.jpg" alt="3.1">
+    <img class="image" src="task.jpg" alt="3.1">
     <h4 align="left">Результат виконання:</h4>
-    <img src="figure.jpg" alt="3.1">
+    <img class="image" src="figure.jpg" alt="3.1">
 
     <br />
     <br />
     <br />
     <br />
     <br />
+
+    <h1 align='center'>Звіт </h1>
+    <h2 align='center'>Про виконання лабораторної роботи №7</h2>
+    <h2 align='center'>
+        з теми <em>
+            "Розробка динамічних елементів Web – сайтів
+            з використанням JavaScript – сценаріїв."
+        </em>
+    </h2>
+    <h3 align='center'>
+        Варіант 10</em>
+    </h3>
+    <h3 align="right">Виконав:</h3>
+    <h4 align="right">Пашняк Т.О. (група 241Б)</h4>
+    <p> <a href="https://github.com/VLazorykOOP/weblab1-PashniakTaras">Посилання на репозиторій:</a></p>
+    <br />
+    <h3 align="left">Завдання:</h3>
+    <h4 align="left">1:</h4>
+    <img class="image" src="1.jpg" alt="3.1">
+    <h4 align="left">Результат 1:</h4>
+    <h5 align="left">onload вхід на стор:</h5>
+    <img class="image" src="11.jpg" alt="3.1">
+    <h5 align="left">onblur:</h5>
+    <img class="image" src="12.jpg" alt="3.1">
+    <h5 align="left">по натисканню кнопки:</h5>
+    <img class="image" src="13.jpg" alt="3.1">
+    <h5 align="left">кнопка для виходу з сайту:</h5>
+    <img class="image" src="14.jpg" alt="3.1">
+    <h5 align="left">onresize:</h5>
+    <img class="image" src="15.jpg" alt="3.1">
+    <h4 align="left">2:</h4>
+    <img class="image" src="2.jpg" alt="3.1">
+    <h4 align="left">Результат 2:</h4>
+    <h5 align="left">При нажатті на "Це заголовок Н1" Виводиться повідомлення про це:</h5>
+    <img class="image" src="21.jpg" alt="3.1">
+    <h4 align="left">3:</h4>
+    <img class="image" src="3.jpg" alt="3.1">
+    <h4 align="left">Результат 3:</h4>
+    <h5 align="left">При введенні тексту та натисканні на Run Task, виводиться інформація про розробника сайту. <br> Потім сторінка перезавантажується з повідомленням про це.:</h5>
+    <img class="image" src="31.jpg" alt="3.1">
+    <h4 align="left">4:</h4>
+    <img class="image" src="4.jpg" alt="3.1">
+    <h4 align="left">Результат 4:</h4>
+    <h5 align="left">до наведення:</h5>
+    <img class="image" src="41.jpg" alt="3.1">
+    <h5 align="left">після наведення:</h5>
+    <img class="image" src="42.jpg" alt="3.1">
+    <h4 align="left">5:</h4>
+    <img class="image" src="5.jpg" alt="3.1">
+    <h4 align="left">Результат 5:</h4>
+    <h5 align="left">форма підрахування к-сті слів на сторінці логіну:</h5>
+    <img class="image" src="51.jpg" alt="3.1">
+
 </body>
 
 </html> 
