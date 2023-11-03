@@ -46,6 +46,86 @@
             <li><a href="zvit.html">Звіт</a></li>
         </ul>
     </nav>
+
+    <h1>Медіа-бібліотека фірми</h1>
+
+    <!-- Меню -->
+    <form id="mediaMenu">
+        <label for="mediaType">Виберіть тип медіа:</label>
+        <select id="mediaType">
+            <option value="audio">Аудіо</option>
+            <option value="video">Відео</option>
+        </select>
+
+        <label for="mediaSelection">Виберіть медіа:</label>
+        <select id="mediaSelection">
+            <!-- Додайте ваші варіанти медіа-ресурсів тут -->
+            <option value="media1">Медіа 1</option>
+            <option value="media2">Медіа 2</option>
+            <option value="media3">Медіа 3</option>
+        </select>
+
+        <input type="submit" value="Показати">
+    </form>
+
+    <!-- Відображення медіа -->
+    <div id="mediaDisplay">
+        <audio controls style="display: none;">
+            <source src="media1.mp3" type="audio/mpeg">
+            <source src="media1.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <video controls style="display: none; width: 400px; height: 300px;">
+            <source src="media1.mp4" type="video/mp4">
+            <source src="media1.webm" type="video/webm">
+            Your browser does not support the video element.
+        </video>
+    </div>
+
+    <script>
+        const mediaMenu = document.getElementById("mediaMenu");
+        const mediaTypeSelect = document.getElementById("mediaType");
+        const mediaSelectionSelect = document.getElementById("mediaSelection");
+        const audioPlayer = document.querySelector("audio");
+        const videoPlayer = document.querySelector("video");
+
+        mediaMenu.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const selectedMediaType = mediaTypeSelect.value;
+            const selectedMediaResource = mediaSelectionSelect.value;
+
+            if (selectedMediaType === "audio") {
+                audioPlayer.style.display = "block";
+                videoPlayer.style.display = "none";
+            } else {
+                audioPlayer.style.display = "none";
+                videoPlayer.style.display = "block";
+            }
+
+            // Змініть шляхи до ваших медіа-ресурсів тут
+            if (selectedMediaResource === "media1") {
+                audioPlayer.src = "audio1.wav";
+                videoPlayer.src = "media1.mp4";
+            } else if (selectedMediaResource === "media2") {
+                audioPlayer.src = "audio2.wav";
+                videoPlayer.src = "media2.mp4";
+            } else if (selectedMediaResource === "media3") {
+                audioPlayer.src = "audio3.wav";
+                videoPlayer.src = "media3.mp4";
+            }
+        });
+    </script>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
     <div class="container">
         <h4 id="company-info" title="Інформація про фірму" align="center">Інформація про нашу фірму</h4>
         <p class="description">Моя фірма виробляє комп'ютери.</p>
