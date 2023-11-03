@@ -46,6 +46,115 @@
             <li><a href="zvit.html">Звіт</a></li>
         </ul>
     </nav>
+
+    <canvas id="myCanvas" width="600" height="400" style="border:1px solid black;"></canvas>
+    <button id="animateButton">Анімувати</button>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let animate = false;
+
+        // Оновлення анімації при натисканні кнопки
+        document.getElementById("animateButton").addEventListener("click", () => {
+            animate = !animate;
+            if (animate) {
+                requestAnimationFrame(animateShapes);
+            }
+        });
+
+        // Рамка для системи координат
+        ctx.strokeRect(0, 0, 600, 400);
+
+        // Визначаємо початковий стан фігур
+        const shapes = [
+            { type: "circle", x: 200, y: 180, r: 20, color: "blue" },
+            { type: "triangle", x: 200, y: 200, color: "blue" },
+            { type: "square", x: 180, y: 120, size: 40, color: "blue" },
+            { type: "square", x: 220, y: 240, size: 40, color: "blue" },
+            { type: "ellipse", x: 300, y: 200, rx: 40, ry: 80, color: "blue" },
+            { type: "square", x: 340, y: 240, size: 40, color: "blue" },
+            { type: "triangle", x: 400, y: 200, color: "blue" },
+            { type: "circle", x: 400, y: 180, r: 20, color: "blue" },
+            { type: "square", x: 380, y: 120, size: 40, color: "blue" },
+            { type: "square", x: 260, y: 80, size: 40, color: "blue" },
+            {type: "square", x: 300, y: 80, size: 40, color: "blue" }
+        ];
+
+        function drawShape(shape) {
+            ctx.beginPath();
+            if (shape.type === "circle") {
+                ctx.arc(shape.x, shape.y, shape.r, 0, 2 * Math.PI);
+            } else if (shape.type === "triangle") {
+                ctx.moveTo(shape.x, shape.y);
+                ctx.lineTo(shape.x + 20, shape.y + 40);
+                ctx.lineTo(shape.x - 20, shape.y + 40);
+            } else if (shape.type === "square") {
+                ctx.rect(shape.x, shape.y, shape.size, shape.size);
+            } else if (shape.type === "ellipse") {
+                ctx.ellipse(shape.x, shape.y, shape.rx, shape.ry, 0, 0, 2 * Math.PI);
+            }
+            ctx.fillStyle = shape.color;
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function animateShapes() {
+            if (animate) {
+                // Очистити canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Модифікувати фігури (приклад)
+                shapes[0].x += 2;
+                shapes[0].y += 1;
+                shapes[0].r += 0.2;
+                shapes[7].r += 0.05;
+                shapes[1].x += 2;
+                shapes[1].y += -1;
+                shapes[2].x += -2;
+                shapes[2].y += 1;
+                shapes[3].x += 2;
+                shapes[3].y += -1;
+                shapes[4].x += -2;
+                shapes[4].y += 3;
+                shapes[5].x += 3;
+                shapes[5].y += -1;
+                shapes[6].x += -2;
+                shapes[6].y += -1;
+                shapes[7].x += 2;
+                shapes[7].y += -1;
+                shapes[8].x += 2;
+                shapes[8].y += -1;
+                shapes[9].x += 3;
+                shapes[9].y += -0.5;
+                shapes[10].x += 2;
+                shapes[10].y += -1;
+
+                // Змінюємо колір фігур (приклад)
+                shapes[0].color = "red";
+                shapes[1].color = "green";
+                shapes[2].color = "darkblue";
+                shapes[3].color = "red";
+                shapes[4].color = "green";
+                shapes[5].color = "purple";
+                shapes[6].color = "red";
+                shapes[7].color = "lightgreen";
+                shapes[8].color = "purple";
+                shapes[9].color = "lightblue";
+
+                // Малювати фігури
+                shapes.forEach(drawShape);
+
+                // Запитати анімацію наступного кадру
+                requestAnimationFrame(animateShapes);
+            }
+        }
+
+        // Малювати початковий стан фігур
+        shapes.forEach(drawShape);
+    </script>
+
     <h2 style="color: darkred;" dir="ltr" align="center">Останні новини</h2>
     <img id="news-image" width="300" hspace="10" src="news.jpeg" alt="Зображення новини">
     <map name="news-map">
